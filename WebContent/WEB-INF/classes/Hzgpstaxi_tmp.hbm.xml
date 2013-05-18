@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="PO.Hzgpstaxi_tmp" table="hzgpstaxi_tmp" schema="" catalog="gps">
+        <id name="messageId">
+            <column name="MESSAGE_ID" sql-type="varchar" length="12" not-null="true"/>
+        </id>
+        <property name="vehicleId">
+            <column name="VEHICLE_ID" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="vehicleNum">
+            <column name="VEHICLE_NUM" sql-type="varchar" length="12" not-null="true"/>
+        </property>
+        <property name="longi">
+            <column name="LONGI" sql-type="double" length="22" not-null="true"/>
+        </property>
+        <property name="lati">
+            <column name="LATI" sql-type="double" length="22" not-null="true"/>
+        </property>
+        <property name="px">
+            <column name="PX" sql-type="long" length="22" not-null="true"/>
+        </property>
+        <property name="py">
+            <column name="PY" sql-type="long" length="22" not-null="true"/>
+        </property>
+        <property name="speed">
+            <column name="SPEED" sql-type="double" length="22" not-null="true"/>
+        </property>
+        <property name="direction">
+            <column name="DIRECTION" sql-type="int" length="10" not-null="true"/>
+        </property>
+        
+        <property name="state">
+            <column name="STATE" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="carstate">
+            <column name="CARSTATE" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="speedTime">
+            <column name="SPEED_TIME"/>
+        </property>
+        <property name="dbtime">
+            <column name="DB_TIME"/>
+        </property>
+        <property name="note">
+            <column name="NOTE"/>
+        </property>
+    </class>
+</hibernate-mapping>

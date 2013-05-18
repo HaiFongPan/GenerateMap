@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0" metadata-complete="true">
+    <servlet>
+        <servlet-name>getGps</servlet-name>
+        <servlet-class>Servlet.getGps</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getXYData</servlet-name>
+        <servlet-class>Servlet.getXYData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getGps</servlet-name>
+        <url-pattern>/getGps</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getXYData</servlet-name>
+        <url-pattern>/getXY</url-pattern>
+    </servlet-mapping>
+</web-app>
