@@ -1,6 +1,6 @@
 ﻿//CLASS:基本几何类型。
 function Geometry(){
-    this.id = CanvasSketch.getId("geomtry_");
+    this.id = leoCanvas.getId("geomtry_");
 }
 
 //bounds属性定义了当前Geometry外接矩形范围。

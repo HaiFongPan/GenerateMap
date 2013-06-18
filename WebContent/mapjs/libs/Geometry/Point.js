@@ -16,7 +16,7 @@ Point.prototype.getBounds = function () {
     if(!this.bounds) {
         var x = this.x;
         var y = this.y;
-        this.bounds = new CanvasSketch.Bounds(x, y, x, y);
+        this.bounds = new leoCanvas.Bounds(x, y, x, y);
         return this.bounds;
     } else {
         return this.bounds;

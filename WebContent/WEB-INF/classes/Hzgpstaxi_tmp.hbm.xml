@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="PO.Hzgpstaxi_tmp" table="hzgpstaxi_tmp" schema="" catalog="gps">
+    <class name="com.phf.PO.Hzgpstaxi_tmp" table="hzgpstaxi_tmp" schema="" catalog="gps">
         <id name="messageId">
             <column name="MESSAGE_ID" sql-type="varchar" length="12" not-null="true"/>
         </id>

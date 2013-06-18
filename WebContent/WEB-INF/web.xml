@@ -5,18 +5,11 @@
          version="3.0" metadata-complete="true">
     <servlet>
         <servlet-name>getGps</servlet-name>
-        <servlet-class>Servlet.getGps</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>getXYData</servlet-name>
-        <servlet-class>Servlet.getXYData</servlet-class>
+        <servlet-class>com.phf.Servlet.getGps</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getGps</servlet-name>
         <url-pattern>/getGps</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>getXYData</servlet-name>
-        <url-pattern>/getXY</url-pattern>
-    </servlet-mapping>
+
 </web-app>

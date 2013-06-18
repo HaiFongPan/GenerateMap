@@ -1,13 +1,13 @@
 ﻿//CLASS:图层类
 function Layer(div) {
     var style = div.style;
-    var size = new CanvasSketch.Size(parseInt(style.width), parseInt(style.height));
+    var size = new leoCanvas.Size(parseInt(style.width), parseInt(style.height));
     this.size = size;
     this.div = div;
     this.scale = new Scale(this);
     this.pan = new Pan(this);
-    this.maxBounds = new CanvasSketch.Bounds(-size.w / 2, -size.h / 2, size.w / 2, size.h / 2);
-    this.bounds = new CanvasSketch.Bounds(-size.w / 2, -size.h / 2, size.w / 2, size.h / 2);
+    this.maxBounds = new leoCanvas.Bounds(-size.w / 2, -size.h / 2, size.w / 2, size.h / 2);
+    this.bounds = new leoCanvas.Bounds(-size.w / 2, -size.h / 2, size.w / 2, size.h / 2);
     this.center = this.bounds.getCenter();
     this.zoom = 100;
     this.getRes();
@@ -41,7 +41,7 @@ Layer.prototype.addVectors = function (vectors) {
 Layer.prototype.drawVector = function (vector) {
     var style;
     if(!vector.style) {
-        style = new CanvasSketch.defaultStyle();
+        style = new leoCanvas.defaultStyle();
     } else {
         style = vector.style;
     }
@@ -58,7 +58,7 @@ Layer.prototype.moveTo = function (zoom, center) {
     var width = this.size.w * res;
     var height = this.size.h * res;
     //获取新的视图范围。
-    var bounds = new CanvasSketch.Bounds(center.x - width/2, center.y - height/2, center.x + width/2, center.y + height/2);
+    var bounds = new leoCanvas.Bounds(center.x - width/2, center.y - height/2, center.x + width/2, center.y + height/2);
     this.bounds = bounds;
     //记录已经绘制vector的个数
     var index = 0;
@@ -74,6 +74,6 @@ Layer.prototype.moveTo = function (zoom, center) {
 
 //通过屏幕坐标设定center。
 Layer.prototype.getPositionFromPx = function (px) {
-    return new CanvasSketch.Position((px.x + this.bounds.left / this.res) * this.res,
+    return new leoCanvas.Position((px.x + this.bounds.left / this.res) * this.res,
         (this.bounds.top/this.res - px.y) * this.res);
 }

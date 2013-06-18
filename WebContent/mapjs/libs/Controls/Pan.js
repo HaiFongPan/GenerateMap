@@ -1,4 +1,4 @@
-//CLASS:¿ØÖÆÆ½ÒÆ¡£
+//CLASS:æ§åˆ¶å¹³ç§»ã€‚
 function Pan(layer) {
     this.layer = layer;
     this.div = layer.div;
@@ -8,18 +8,18 @@ function Pan(layer) {
 
 Pan.prototype.startPan = function(e) {
     this.dragging = true;
-    //ÔÚÒ»¿ªÊ¼±£´æµã»÷µÄÎ»ÖÃ¡£
+    //åœ¨ä¸€å¼€å§‹ä¿å­˜ç‚¹å‡»çš„ä½ç½®ã€‚
     this.lastX = (e.offsetX || e.layerX);
     this.lastY = (e.offsetY || e.layerY);
-    //ÉèÖÃÊó±êÑùÊ½¡£
+    //è®¾ç½®é¼ æ ‡æ ·å¼ã€‚
     this.layer.div.style.cursor = "move";
-    CanvasSketch.stopEventBubble(e);
+    leoCanvas.stopEventBubble(e);
 }
 
 Pan.prototype.pan = function(e) {
     if(this.dragging) {
         var layer = this.layer;
-        //¼ÆËã¸Ä±äµÄÏñËØÖµ
+        //è®¡ç®—æ”¹å˜çš„åƒç´ å€¼
         var dx = (e.offsetX || e.layerX) - this.lastX;
         var dy = (e.offsetY || e.layerY) - this.lastY;
         this.lastX = (e.offsetX || e.layerX);
@@ -28,13 +28,13 @@ Pan.prototype.pan = function(e) {
         layer.center.y += dy * layer.res;
         layer.moveTo(layer.zoom, layer.center);
     }
-    CanvasSketch.stopEventBubble(e);
+    leoCanvas.stopEventBubble(e);
 }
 
 Pan.prototype.endPan = function(e) {
     this.layer.div.style.cursor = "default";
     this.dragging = false;
-    CanvasSketch.stopEventBubble(e);
+    leoCanvas.stopEventBubble(e);
 }
 
 Pan.prototype.Events = [["mousedown", Pan.prototype.startPan],
@@ -46,7 +46,7 @@ Pan.prototype.active = function () {
     for(var i = 0, len = this.Events.length; i < len; i++) {
         var type = this.Events[i][0];
         var listener = this.Events[i][1];
-        listener = CanvasSketch.bindAsEventListener(listener, this);
+        listener = leoCanvas.bindAsEventListener(listener, this);
         this.div.addEventListener(type, listener, true);        
     }
 }                

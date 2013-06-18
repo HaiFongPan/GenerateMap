@@ -16,16 +16,16 @@ Scale.prototype.wheelChange = function(e) {
     var zoom = this.layer.zoom + delta;
     var newRes = this.layer.getResFromZoom(zoom);
     
-    var center = new CanvasSketch.Position(zoomPoint.x + deltalX * newRes, zoomPoint.y + deltalY * newRes);
+    var center = new leoCanvas.Position(zoomPoint.x + deltalX * newRes, zoomPoint.y + deltalY * newRes);
     
     
     this.layer.moveTo(zoom, center);
     
-    CanvasSketch.stopEventBubble(e);
+    leoCanvas.stopEventBubble(e);
 }
 
 Scale.prototype.DOMScroll = function(e) {
-    CanvasSketch.stopEventBubble(e);
+    leoCanvas.stopEventBubble(e);
 }
 
 Scale.prototype.Events = [["mousewheel", Scale.prototype.wheelChange],["DOMMouseScroll", Scale.prototype.DOMScroll]];
@@ -34,7 +34,7 @@ Scale.prototype.active = function () {
     for(var i = 0, len = this.Events.length; i < len; i++) {
         var type = this.Events[i][0];
         var listener = this.Events[i][1];
-        listener = CanvasSketch.bindAsEventListener(listener, this);
+        listener = leoCanvas.bindAsEventListener(listener, this);
         this.div.addEventListener(type, listener, true);        
     }
 }
